@@ -6,7 +6,11 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
 const CATEGORIES = [
-  'FinTech', 'HealthTech', 'EdTech', 'AI', 'SaaS', 'E-commerce', 'Web3', 'CleanTech'
+  'FinTech', 'HealthTech', 'EdTech', 'AI', 'SaaS', 'E-commerce', 'Web3', 'CleanTech',
+  'PropTech', 'BioTech', 'AgriTech', 'SpaceTech', 'DeepTech', 'CyberSecurity',
+  'Gaming', 'Logistics', 'Mobility', 'Renewable Energy', 'Robotics', 'AR/VR',
+  'Consumer Social', 'Enterprise Software', 'Hardware', 'Marketplaces', 'D2C',
+  'B2B', 'Climate Tech', 'LegalTech', 'InsurTech', 'FoodTech', 'HR Tech'
 ];
 
 interface HeroSearchProps {
@@ -26,17 +30,35 @@ export default function HeroSearch({ onSearchComplete }: HeroSearchProps) {
 
   // Fetch current country based on IP
   useEffect(() => {
-    fetch('https://ipapi.co/json/')
-      .then(res => res.json())
-      .then(data => {
+    const fetchLocation = async () => {
+      try {
+        const res = await fetch('https://ipapi.co/json/');
+        const data = await res.json();
         if (data.country_name) {
           setCurrentCountry(data.country_name);
+          setTargetCountry(data.country_name); // Auto-fill target country
         } else {
-          setCurrentCountry('Unknown');
+          throw new Error('No country');
         }
-      })
-      .catch(() => setCurrentCountry('Unknown'))
-      .finally(() => setIsDetecting(false));
+      } catch (err) {
+        // Fallback
+        try {
+          const fbRes = await fetch('https://ipinfo.io/json');
+          const fbData = await fbRes.json();
+          if (fbData.country) {
+            setCurrentCountry(fbData.country);
+            setTargetCountry(fbData.country);
+          } else {
+            setCurrentCountry('Unknown Location');
+          }
+        } catch {
+          setCurrentCountry('Unknown Location');
+        }
+      } finally {
+        setIsDetecting(false);
+      }
+    };
+    fetchLocation();
   }, []);
 
   const handleCategorySubmit = (e: React.FormEvent) => {

@@ -12,6 +12,8 @@ export interface Investor {
   companies: string[];
   projects: string[];
   bio: string;
+  category: string;
+  country: string;
 }
 
 interface InvestorCardProps {
