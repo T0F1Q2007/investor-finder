@@ -8,6 +8,7 @@ export default function Globe() {
 
   useEffect(() => {
     if (!mountRef.current) return;
+    const currentMount = mountRef.current;
 
     // Scene setup
     const scene = new THREE.Scene();
@@ -97,8 +98,8 @@ export default function Globe() {
     return () => {
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
-      if (mountRef.current && mountRef.current.contains(renderer.domElement)) {
-        mountRef.current.removeChild(renderer.domElement);
+      if (currentMount && currentMount.contains(renderer.domElement)) {
+        currentMount.removeChild(renderer.domElement);
       }
       geometry.dispose();
       material.dispose();

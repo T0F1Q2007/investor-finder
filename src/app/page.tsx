@@ -72,7 +72,7 @@ export default function Home() {
   const [investors, setInvestors] = useState<Investor[]>([]);
   const resultsRef = useRef<HTMLDivElement>(null);
 
-  const handleSearchComplete = (category: string, country: string) => {
+  const handleSearchComplete = () => {
     // In a real app, this would fetch from an API based on category/country
     // For now, we simulate a search and use the mock data
     setInvestors(MOCK_INVESTORS);

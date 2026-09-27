@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Building2, Briefcase, DollarSign, ChevronRight } from 'lucide-react';
 
 export interface Investor {
@@ -24,10 +25,12 @@ export default function InvestorCard({ investor }: InvestorCardProps) {
       {/* Photo header */}
       <div className="h-48 relative overflow-hidden bg-zinc-800">
         {/* We use a placeholder image service for the mock photos */}
-        <img 
+        <Image 
           src={investor.photoUrl} 
           alt={investor.name}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          fill
+          sizes="(max-width: 768px) 350px, 400px"
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent" />
         
