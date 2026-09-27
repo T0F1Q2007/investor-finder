@@ -247,6 +247,11 @@ h1 {
   margin: 0;
 }
 
+.sitting-how {
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
 .file-layout {
   display: grid;
   gap: 24px;

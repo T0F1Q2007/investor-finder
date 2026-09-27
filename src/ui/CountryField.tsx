@@ -87,10 +87,35 @@ export function CountryField({
           </p>
         ) : null}
         {sittingStatus === 'ready' && sitting ? (
-          <p>
-            <strong>{sitting.name}</strong>
-            <span> {sitting.code}</span>
-          </p>
+          <>
+            <p>
+              <strong>{sitting.name}</strong>
+              <span> {sitting.code}</span>
+            </p>
+            <p className="sitting-how">
+              {sitting.source === 'language'
+                ? 'From browser language. IP lookup did not return a country.'
+                : 'From your IP address.'}
+            </p>
+            {COUNTRIES.some((country) => country.code === sitting.code) ? (
+              <button
+                type="button"
+                className="text-action"
+                onClick={() => {
+                  const match = COUNTRIES.find((country) => country.code === sitting.code)
+                  if (match) {
+                    onPick(match)
+                    setQuery(match.name)
+                    setOpen(false)
+                  }
+                }}
+              >
+                Search this sitting country
+              </button>
+            ) : (
+              <p className="sitting-how">This sitting country is not in the check-country list yet.</p>
+            )}
+          </>
         ) : null}
         {sittingStatus === 'ready' && !sitting ? <p>No country from this IP.</p> : null}
       </aside>

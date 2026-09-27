@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import type { Investor, SourcedFact } from '../catalog/investors'
-import { COUNTRIES, countryName } from '../geo/countries'
+import { COUNTRIES, countryName, type CountryOption } from '../geo/countries'
 import { PortraitStage } from './PortraitStage'
 
 type Props = {
@@ -10,6 +10,8 @@ type Props = {
   night: boolean
   reducedMotion: boolean
   onIndex: (index: number) => void
+  nearbyCountries: string[]
+  onPickCountry: (country: CountryOption) => void
 }
 
 function FactList({ title, facts }: { title: string; facts: SourcedFact[] }) {
@@ -39,7 +41,16 @@ function FactList({ title, facts }: { title: string; facts: SourcedFact[] }) {
   )
 }
 
-export function InvestorFile({ investors, index, axis, night, reducedMotion, onIndex }: Props) {
+export function InvestorFile({
+  investors,
+  index,
+  axis,
+  night,
+  reducedMotion,
+  onIndex,
+  nearbyCountries,
+  onPickCountry,
+}: Props) {
   const scrollerRef = useRef<HTMLDivElement>(null)
   const platesRef = useRef<Array<HTMLElement | null>>([])
 
@@ -72,10 +83,28 @@ export function InvestorFile({ investors, index, axis, night, reducedMotion, onI
   }, [investors, onIndex])
 
   if (investors.length === 0) {
+    const options = nearbyCountries
+      .map((code) => COUNTRIES.find((country) => country.code === code))
+      .filter((country): country is CountryOption => Boolean(country))
+
     return (
       <div className="empty-file">
         <h2>No plates in this drawer</h2>
-        <p>The catalog has no person for that thesis in that country. Pick another country from the rail.</p>
+        <p>This desk has no sourced person for that thesis in that country.</p>
+        {options.length === 0 ? (
+          <p>No other country holds this thesis yet. Pick another thesis from the rail.</p>
+        ) : (
+          <>
+            <p>Countries that do have a file for this thesis:</p>
+            <div className="pager">
+              {options.map((country) => (
+                <button key={country.code} type="button" onClick={() => onPickCountry(country)}>
+                  Open {country.name}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
       </div>
     )
   }

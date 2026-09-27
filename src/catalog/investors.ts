@@ -496,4 +496,278 @@ export const INVESTORS: Investor[] = [
     ],
     worth: null,
   },
+  {
+    id: 'khosla',
+    name: 'Vinod Khosla',
+    role: 'Founder, Khosla Ventures',
+    countryCodes: ['US'],
+    categoryIds: ['climate', 'deep-tech', 'food', 'health', 'software'],
+    initials: 'VK',
+    fileNote: 'Public bio. Portrait on this desk is an initial plate, not a licensed photo.',
+    firms: [
+      {
+        text: 'Khosla Ventures',
+        sourceUrl: 'https://en.wikipedia.org/wiki/Vinod_Khosla',
+        sourceLabel: 'Wikipedia: Vinod Khosla',
+      },
+    ],
+    companies: [
+      {
+        text: 'Co-founded Sun Microsystems',
+        sourceUrl: 'https://en.wikipedia.org/wiki/Vinod_Khosla',
+        sourceLabel: 'Wikipedia: Vinod Khosla',
+      },
+    ],
+    investments: [
+      {
+        text: 'Khosla Ventures publishes climate, food, health, and software portfolio companies',
+        sourceUrl: 'https://www.khoslaventures.com/',
+        sourceLabel: 'Khosla Ventures',
+      },
+    ],
+    projects: [
+      {
+        text: 'Sun Microsystems (co-founder) before the venture firm',
+        sourceUrl: 'https://en.wikipedia.org/wiki/Vinod_Khosla',
+        sourceLabel: 'Wikipedia: Vinod Khosla',
+      },
+    ],
+    worth: {
+      text: 'Forbes publishes a live net-worth estimate; this desk does not copy a figure that goes stale.',
+      sourceUrl: 'https://www.forbes.com/profile/vinod-khosla/',
+      sourceLabel: 'Forbes profile',
+    },
+  },
+  {
+    id: 'green',
+    name: 'Kirsten Green',
+    role: 'Founder, Forerunner Ventures',
+    countryCodes: ['US'],
+    categoryIds: ['consumer', 'food', 'marketplace'],
+    initials: 'KG',
+    fileNote: 'Public bio. Portrait on this desk is an initial plate, not a licensed photo.',
+    firms: [
+      {
+        text: 'Forerunner Ventures',
+        sourceUrl: 'https://en.wikipedia.org/wiki/Kirsten_Green',
+        sourceLabel: 'Wikipedia: Kirsten Green',
+      },
+    ],
+    companies: [
+      {
+        text: 'Forerunner partnership (venture firm)',
+        sourceUrl: 'https://www.forerunnerventures.com/',
+        sourceLabel: 'Forerunner Ventures',
+      },
+    ],
+    investments: [
+      {
+        text: 'Public coverage of Forerunner includes consumer companies such as Dollar Shave Club, Warby Parker, and Glossier',
+        sourceUrl: 'https://en.wikipedia.org/wiki/Kirsten_Green',
+        sourceLabel: 'Wikipedia: Kirsten Green',
+      },
+    ],
+    projects: [
+      {
+        text: 'Building a consumer-focused early-stage fund (firm history)',
+        sourceUrl: 'https://en.wikipedia.org/wiki/Kirsten_Green',
+        sourceLabel: 'Wikipedia: Kirsten Green',
+      },
+    ],
+    worth: null,
+  },
+  {
+    id: 'lee',
+    name: 'Aileen Lee',
+    role: 'Founder, Cowboy Ventures',
+    countryCodes: ['US'],
+    categoryIds: ['consumer', 'software', 'marketplace', 'media'],
+    initials: 'AL',
+    fileNote: 'Public bio. Portrait on this desk is an initial plate, not a licensed photo.',
+    firms: [
+      {
+        text: 'Cowboy Ventures',
+        sourceUrl: 'https://en.wikipedia.org/wiki/Aileen_Lee',
+        sourceLabel: 'Wikipedia: Aileen Lee',
+      },
+    ],
+    companies: [
+      {
+        text: 'Cowboy Ventures partnership',
+        sourceUrl: 'https://www.cowboy.vc/',
+        sourceLabel: 'Cowboy Ventures',
+      },
+    ],
+    investments: [
+      {
+        text: 'Cowboy’s public story includes early checks in companies such as Dollar Shave Club and other consumer software firms',
+        sourceUrl: 'https://en.wikipedia.org/wiki/Aileen_Lee',
+        sourceLabel: 'Wikipedia: Aileen Lee',
+      },
+    ],
+    projects: [
+      {
+        text: 'Coined “unicorn” for private companies valued over one billion dollars (2013 TechCrunch essay, widely cited)',
+        sourceUrl: 'https://en.wikipedia.org/wiki/Aileen_Lee',
+        sourceLabel: 'Wikipedia: Aileen Lee',
+      },
+    ],
+    worth: null,
+  },
+  {
+    id: 'niel',
+    name: 'Xavier Niel',
+    role: 'Founder, Iliad; Kima Ventures',
+    countryCodes: ['FR'],
+    categoryIds: ['software', 'consumer', 'media', 'fintech'],
+    initials: 'XN',
+    fileNote: 'Public bio. Portrait on this desk is an initial plate, not a licensed photo.',
+    firms: [
+      {
+        text: 'Kima Ventures',
+        sourceUrl: 'https://en.wikipedia.org/wiki/Xavier_Niel',
+        sourceLabel: 'Wikipedia: Xavier Niel',
+      },
+    ],
+    companies: [
+      {
+        text: 'Founded Iliad (Free)',
+        sourceUrl: 'https://en.wikipedia.org/wiki/Xavier_Niel',
+        sourceLabel: 'Wikipedia: Xavier Niel',
+      },
+    ],
+    investments: [
+      {
+        text: 'Kima Ventures publishes a public list of early-stage investments',
+        sourceUrl: 'https://www.kimaventures.com/',
+        sourceLabel: 'Kima Ventures',
+      },
+    ],
+    projects: [
+      {
+        text: 'Station F campus in Paris',
+        sourceUrl: 'https://en.wikipedia.org/wiki/Station_F',
+        sourceLabel: 'Wikipedia: Station F',
+      },
+    ],
+    worth: {
+      text: 'Forbes publishes a live net-worth estimate; this desk does not copy a figure that goes stale.',
+      sourceUrl: 'https://www.forbes.com/profile/xavier-niel/',
+      sourceLabel: 'Forbes profile',
+    },
+  },
+  {
+    id: 'wertz',
+    name: 'Boris Wertz',
+    role: 'Founding partner, Version One Ventures',
+    countryCodes: ['CA'],
+    categoryIds: ['software', 'marketplace', 'consumer', 'fintech'],
+    initials: 'BW',
+    fileNote: 'Public bio. Portrait on this desk is an initial plate, not a licensed photo.',
+    firms: [
+      {
+        text: 'Version One Ventures',
+        sourceUrl: 'https://en.wikipedia.org/wiki/Version_One_Ventures',
+        sourceLabel: 'Wikipedia: Version One Ventures',
+      },
+    ],
+    companies: [
+      {
+        text: 'AbeBooks (co-founder; acquired by Amazon)',
+        sourceUrl: 'https://en.wikipedia.org/wiki/AbeBooks',
+        sourceLabel: 'Wikipedia: AbeBooks',
+      },
+    ],
+    investments: [
+      {
+        text: 'Version One publishes a public portfolio of software and marketplace companies',
+        sourceUrl: 'https://versionone.vc/companies/',
+        sourceLabel: 'Version One companies',
+      },
+    ],
+    projects: [
+      {
+        text: 'AbeBooks marketplace before venture investing',
+        sourceUrl: 'https://en.wikipedia.org/wiki/AbeBooks',
+        sourceLabel: 'Wikipedia: AbeBooks',
+      },
+    ],
+    worth: null,
+  },
+  {
+    id: 'margalit',
+    name: 'Erel Margalit',
+    role: 'Founder, Jerusalem Venture Partners',
+    countryCodes: ['IL'],
+    categoryIds: ['software', 'deep-tech', 'media', 'health'],
+    initials: 'EM',
+    fileNote: 'Public bio. Portrait on this desk is an initial plate, not a licensed photo.',
+    firms: [
+      {
+        text: 'Jerusalem Venture Partners (JVP)',
+        sourceUrl: 'https://en.wikipedia.org/wiki/Erel_Margalit',
+        sourceLabel: 'Wikipedia: Erel Margalit',
+      },
+    ],
+    companies: [
+      {
+        text: 'JVP partnership and related media / cyber holdings described in public bios',
+        sourceUrl: 'https://en.wikipedia.org/wiki/Jerusalem_Venture_Partners',
+        sourceLabel: 'Wikipedia: Jerusalem Venture Partners',
+      },
+    ],
+    investments: [
+      {
+        text: 'JVP publishes portfolio companies across enterprise software, cyber, and media',
+        sourceUrl: 'https://www.jvpvc.com/',
+        sourceLabel: 'JVP',
+      },
+    ],
+    projects: [
+      {
+        text: 'JVP Media Quarter in Jerusalem (firm / campus history)',
+        sourceUrl: 'https://en.wikipedia.org/wiki/Jerusalem_Venture_Partners',
+        sourceLabel: 'Wikipedia: Jerusalem Venture Partners',
+      },
+    ],
+    worth: null,
+  },
+  {
+    id: 'karabey',
+    name: 'Ali Karabey',
+    role: 'Managing partner, 212',
+    countryCodes: ['TR'],
+    categoryIds: ['software', 'fintech', 'marketplace', 'consumer'],
+    initials: 'AK',
+    fileNote: 'Public bio. Portrait on this desk is an initial plate, not a licensed photo.',
+    firms: [
+      {
+        text: '212 (Istanbul)',
+        sourceUrl: 'https://www.212.vc/',
+        sourceLabel: '212',
+      },
+    ],
+    companies: [
+      {
+        text: '212 partnership (venture firm)',
+        sourceUrl: 'https://www.212.vc/',
+        sourceLabel: '212',
+      },
+    ],
+    investments: [
+      {
+        text: '212 publishes a public portfolio of Turkey and regional technology companies',
+        sourceUrl: 'https://www.212.vc/',
+        sourceLabel: '212',
+      },
+    ],
+    projects: [
+      {
+        text: 'Early-stage funds based in Istanbul (firm site)',
+        sourceUrl: 'https://www.212.vc/',
+        sourceLabel: '212',
+      },
+    ],
+    worth: null,
+  },
 ]

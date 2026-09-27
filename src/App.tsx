@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { CATEGORIES, type Category } from './catalog/categories'
-import { filterInvestors } from './catalog/filterInvestors'
+import { countriesWithInvestors, filterInvestors } from './catalog/filterInvestors'
 import { INVESTORS } from './catalog/investors'
 import { categoryFromQuery, readDeskQuery, writeDeskQuery, type DeskQuery } from './desk/query'
 import type { CountryOption } from './geo/countries'
@@ -31,7 +31,7 @@ export default function App() {
 
   const lookupSitting = useCallback(() => {
     setSittingStatus('loading')
-    detectCountry()
+    detectCountry(fetch, typeof navigator === 'undefined' ? undefined : navigator.language)
       .then((result) => {
         setSitting(result)
         setSittingStatus('ready')
@@ -169,25 +169,18 @@ export default function App() {
         </div>
 
         {collapsed ? (
-          plates.length === 0 ? (
-            <InvestorFile
-              investors={[]}
-              index={0}
-              axis={axis}
-              night={night}
-              reducedMotion={reducedMotion}
-              onIndex={setPlate}
-            />
-          ) : (
-            <InvestorFile
-              investors={plates}
-              index={plateIndex}
-              axis={axis}
-              night={night}
-              reducedMotion={reducedMotion}
-              onIndex={setPlate}
-            />
-          )
+          <InvestorFile
+            investors={plates}
+            index={plateIndex}
+            axis={axis}
+            night={night}
+            reducedMotion={reducedMotion}
+            onIndex={setPlate}
+            nearbyCountries={
+              query.categoryId ? countriesWithInvestors(INVESTORS, query.categoryId) : []
+            }
+            onPickCountry={pickCountry}
+          />
         ) : null}
       </main>
     </>
